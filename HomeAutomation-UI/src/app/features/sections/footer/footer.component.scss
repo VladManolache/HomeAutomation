@@ -1,0 +1,18 @@
+@import "../../../../variables";
+
+$footer-height: 60px;
+
+.component-page-footer {
+  width: 100%;
+  height: $footer-height;
+  background-color: $primary;
+  line-height: $footer-height;
+  text-align: right;
+}
+
+.page-footer-text {
+  color: white;
+  width: 100%;
+  vertical-align: middle;
+  margin : 20px;
+}

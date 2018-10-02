@@ -1,0 +1,17 @@
+@import "../../../../variables";
+
+$header-height: 100px;
+
+.component-page-header {
+  margin-top: $toolbar-height;
+  width: 100%;
+  height: $header-height;
+  background-color: $primary;
+  line-height: $header-height;
+}
+
+.page-header-text {
+  color: white;
+  vertical-align: middle;
+  margin : 20px;
+}

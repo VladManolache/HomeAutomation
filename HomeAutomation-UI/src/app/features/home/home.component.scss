@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+.devices-list-table {
+  border-collapse: collapse;
+  width: 100%;
+
+  tr {
+    border-bottom: 1px solid grey;
+  }
+  th, td {
+    padding: 1rem;
+  }
+}
+
+.loader-hidden {
+  visibility: hidden;
+}
+
+.loader-overlay {
+  position: fixed;
+  width: 100%;
+  top: $toolbar-height;
+  left: 0;
+  z-index: 100;
+}
+

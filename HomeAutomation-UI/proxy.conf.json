@@ -1,0 +1,8 @@
+{
+	"/": {
+		"target": "http://api-dot-vmanolache-home-automation.appspot.com:80",
+		"secure": false,
+		"logLevel": "debug",
+		"changeOrigin": true
+	}
+}

@@ -1,0 +1,39 @@
+<div>
+
+  <div [class.loader-hidden]="!isLoading">
+    <div class="loader-overlay">
+      <div>
+        <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+      </div>
+    </div>
+  </div>
+
+  <table class="devices-list-table mat-elevation-z8">
+    <tr>
+      <th mat-header-cell>Name</th>
+      <th mat-header-cell>Current state</th>
+      <th mat-header-cell>Change</th>
+    </tr>
+    <tr *ngFor="let device of devicesList">
+      <td mat-cell align="center">{{ device.name }}</td>
+      <td mat-cell align="center">{{ device.state.value }}</td>
+      <td mat-cell>
+        <div *ngIf="device.type == deviceType.LIGHT_SWITCH" align="center">
+          <mat-slide-toggle [disabled]="isLoading" (change)="didToggle(device)"
+                            [checked]="device.state.value == 'on'"></mat-slide-toggle>
+        </div>
+        <div *ngIf="device.type == deviceType.CURTAIN" align="center">
+          <mat-slider [disabled]="isLoading" (change)="didToggle(device, $event)"
+                      [value]="device.state.value" [thumbLabel]="device.state.value"
+                      [min]="device.state.min" [max]="device.state.max"></mat-slider>
+        </div>
+        <div *ngIf="device.type == deviceType.TEMPERATURE_MONITOR" align="center">
+          <mat-slider [disabled]="isLoading" (change)="didToggle(device, $event)"
+                      [value]="device.state.value" [thumbLabel]="device.state.value"
+                      [min]="device.state.min" [max]="device.state.max"></mat-slider>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+</div>
